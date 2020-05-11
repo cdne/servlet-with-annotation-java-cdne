@@ -14,17 +14,6 @@ import java.util.List;
 
 @WebServlet(name = "cart", urlPatterns = {"/cart"}, loadOnStartup = 2)
 public class Cart extends HttpServlet {
-//
-//    private static Cart instance;
-//
-//    private Cart(){}
-//
-//    public static Cart getInstance(){
-//        if (instance == null){
-//            instance = new Cart();
-//        }
-//        return instance;
-//    }
 
     static List<Item> cart = new ArrayList<>();
 
@@ -55,7 +44,6 @@ public class Cart extends HttpServlet {
         for(Item item : cart){
             total += item.getPrice();
         }
-
         return (float)Math.round(total * 100f) / 100f;
     }
 
